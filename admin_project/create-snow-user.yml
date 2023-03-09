@@ -1,0 +1,16 @@
+---
+- name: Run JT from Controller
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    cleanup: true
+  tasks:
+
+  - name: run jt
+    awx.awx.job_launch:
+      job_template: "SNOW - Configure/Destroy demo account"
+      extra_vars:
+        demo_username: "{{ lookup('env', 'SN_USERNAME') }}"
+        demo_password: "{{ lookup('env', 'SN_USERNAME') }}"
+        cleanup: "{{ cleanup }}"
