@@ -15,6 +15,7 @@
       assigned_to: "{{ demo_username }}"
       ip_address: "{{ item.default_ip }}"
       mac_address: "{{ item.default_mac }}"
+      operating_system: "Linux Red Hat"
       environment: test
       other:
         sys_class_name: cmdb_ci_linux_server
