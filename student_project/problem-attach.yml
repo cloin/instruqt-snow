@@ -41,7 +41,7 @@
         number: "{{ item.number }}"
         state: in_progress
         other:
-          problem_id: "{{ problem.record.number }}"
+          problem_id: "{{ problem.record.sys_id }}"
       loop: "{{ incident_list }}"
 
     - debug:
